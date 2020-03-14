@@ -48,19 +48,19 @@ def get_data_first_feature():
     connection_to_api_first_feature()
     list_of_data_base_teams = []
     for i in range(len(response)):
-        attribute_data_base_teams = {'Name Country': '', 'Name League': '', 'Winner Of League': '',
-                                     'Start Of Season': '',
+        attribute_data_base_teams = {'Name Country': '','ID Of League': '',
+                                     'Name League': '','Start Of Season': '',
                                      'End Of Season': '', 'Amount Of Match': ''}
         for j in response[i]:
             if (j == 'name'):
                 attribute_data_base_teams['Name League'] = response[i][j]
             elif (j == 'area'):
+                attribute_data_base_teams['ID Of League'] = response[i][j]['id']
                 attribute_data_base_teams['Name Country'] = response[i][j]['name']
             elif (j == 'seasons'):
                 attribute_data_base_teams['Amount Of Match'] = response[i][j][1]['currentMatchday']
                 attribute_data_base_teams['Start Of Season'] = response[i][j][1]['startDate']
                 attribute_data_base_teams['End Of Season'] = response[i][j][1]['endDate']
-                attribute_data_base_teams['Winner Of League'] = response[i][j][1]['winner']['name']
         list_of_data_base_teams.append(attribute_data_base_teams)
     return sorted(list_of_data_base_teams, key=lambda i: i['Amount Of Match'])  # we sort by amount of games
 

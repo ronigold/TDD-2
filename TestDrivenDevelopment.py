@@ -37,16 +37,16 @@ class TDD_Sport_Data(unittest.TestCase):
     @patch('Feature_Sport_Data.get_data_first_feature')
     def test_WinnerNameNotNone(self, mock):
         """
-        Test 1: Check if the winner name team not None.
+        Test 1: Check if the id of league not None.
         """
         listofdata = self.mockConnectionFirstFeature()
         for i in range(len(listofdata)):
-            self.assertIsNotNone(listofdata[i]['Winner Of League'])
+            self.assertIsNotNone(listofdata[i]['ID Of League'])
 
     @patch('Feature_Sport_Data.get_data_first_feature')
     def test_StartDateSmallerThanEndDate(self, mock):
         """
-        Test 2: Check if the start date of the season befor the end date.
+        Test 2: Check if the start date of the season before the end date.
         """
         listofdata = self.mockConnectionFirstFeature()
         for i in range(len(listofdata)):

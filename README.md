@@ -59,5 +59,4 @@ python Feature_Sport_Data.py
 ```
 and the following output will be : 
 
-![image](https://github.com/kesemev/TDD-2/blob/master/images/output1.jpg)
-![image](https://github.com/kesemev/TDD-2/blob/master/images/output2.JPG)
+https://github.com/kesemev/TDD-2/blob/master/outputs.txt
