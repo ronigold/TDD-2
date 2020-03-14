@@ -1,0 +1,44 @@
+version: v1.0
+name: First pipeline example
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: "Build"
+    task:
+      env_vars:
+        - name: APP_ENV
+          value: prod
+      prologue:
+        commands:
+          - sem-version python 3.7
+      jobs:
+      - name: Docker build
+        commands:
+          - checkout
+  - name: "Unit tests"
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version python 3.7
+          - pip install -r requirements.txt
+      jobs:
+      - name: RSpec testing tool
+        commands:
+          - python -m unittest TestDrivenDevelopment.py
+          - echo "Unit tests"
+      - name: Linter code
+        commands:
+          - pycodestyle --ignore=E501,W605 *.py
+          - echo "make lint"
+
+  - name: "Push Image To Heroku System "
+    task:
+      jobs:
+      - name: Push to Heroku
+        commands:
+          - checkout
+          - echo "Push Image"
+          - git push https://heroku:ed95ff50-daea-49c6-a239-bd024c2f8691@git.heroku.com/infinite-crag-35654.git master
