@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### How to install
 
 __Section A__
-* Clone this repo to your computer :  `https://github.com/kesemev/TDD`
+* Clone this repo to your computer :  `https://github.com/kesemev/TDD-2`
 
 __Section B__
 * Open command line . 
@@ -48,9 +48,16 @@ In order to run the test, use command line to enter the following command:
 ```
 python TestDrivenDevelopment.py
 ```
+If all tests passed, you should see this output:
+![image](https://github.com/kesemev/TDD-2/blob/master/images/pass%20test.jpeg )
+
 
 ## Using the application
 Run the program with the command (you can on  CL inside the directed file) 
 ```
 python Feature_Sport_Data.py
 ```
+and the following output will be : 
+
+![image](https://github.com/kesemev/TDD-2/blob/master/images/output1.jpg)
+![image](https://github.com/kesemev/TDD-2/blob/master/images/output2.JPG)
