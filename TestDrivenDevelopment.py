@@ -35,7 +35,7 @@ class TDD_Sport_Data(unittest.TestCase):
 
     # --------------------------Tests First Feature------------------------------------------
     @patch('Feature_Sport_Data.get_data_first_feature')
-    def test_WinnerNameNotNone(self, mock):
+    def test_IdNameNotNone(self, mock):
         """
         Test 1: Check if the id of league not None.
         """
